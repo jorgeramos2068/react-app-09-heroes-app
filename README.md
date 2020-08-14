@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React App - Heroes App
+
+React web application that shows heroes information using multiple routers.
 
 ## Available Scripts
 
