@@ -1,17 +1,22 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+import HeroCard from './HeroCard';
 import getHeroesByPublisher from '../../selectors/getHeroesByPublisher';
 
 const HeroList = ({publisher}) => {
-  const heroes = getHeroesByPublisher(publisher);
+  const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
 
   return (
-    <ul>
+    <div className="card-columns animate__animated animate__fadeIn">
       {
         heroes.map(hero => (
-          <li key={hero.id}>{hero.superhero}</li>
+          <HeroCard
+            key={hero.id}
+            {...hero}
+          >
+          </HeroCard>
         ))
       }
-    </ul>
+    </div>
   );
 };
 
